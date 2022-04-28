@@ -1,0 +1,20 @@
+{
+  "name": "Teyvat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "clear && echo \"Starting Teyvat...\" && node index.js"
+  },
+  "keywords": [
+    "game",
+	"text adventure"
+  ],
+  "author": "lopste",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "readline-sync": "^1.4.10"
+  }
+}

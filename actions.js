@@ -18,7 +18,7 @@ let actions = {
     "examine": {
         "func": function(args) {
             if(!args.length) {
-                console.log(`Examine ${chalk.italic("what")}?`);
+                console.log(`Examine ${chalk.italic("what")}?\n`);
                 return false;
             }
             
@@ -58,16 +58,16 @@ let actions = {
             if(item) {
                 console.log(`\n${item.examineText}\n`);
             } else {
-                console.log("I do not see that anywhere near here.");
+                console.log("I do not see that anywhere near here.\n");
             }
         }
     },
 	"inv": {
 		"func": function() {
 			if(player.inventory.length > 0) {
-				console.log("\nInventory:");
+				console.log("Inventory:");
 			} else {
-				console.log("You have nothing in your inventory.");
+				console.log("You have nothing in your inventory.\n");
 			}
 			for(let i = 0; i < player.inventory.length; i++) {
 				console.log(player.inventory[i].formattedName);
@@ -78,6 +78,10 @@ let actions = {
 	"take": {
 		"func": function(args) {
 			let itemName = args[0];
+			if(itemName == undefined) {
+				console.log("You can't take nothing, silly.\n");
+				return null;
+			}
 			function findObject(name) {
                 let foundObject;
                 for(let i = 0; i < currentArea.items.length; i++) {
@@ -85,7 +89,7 @@ let actions = {
                         foundObject = currentArea.items[i];
                         return foundObject; 
                     } else {
-						for(let j = 0; i < currentArea.items[i]?.synonyms.length; j++) {
+						for(let j = 0; j < currentArea.items[i]?.synonyms.length; j++) {
 							if(currentArea.items[i] && currentArea.items[i]?.synonyms[j] == name) {
 								foundObject = currentArea.items[i];
 								return foundObject;

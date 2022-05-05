@@ -9,7 +9,9 @@ global.currentArea = areas.SpawnBedroom;
 function main() {
 	console.clear();
 	console.log("You wake up in what seems to be a bedroom. There is a newspaper labeled \"CHANGELOG\" to the left of you.");
-	while(true){parser()}
+	while(true){
+		parser()
+	}
 }
 
 main();

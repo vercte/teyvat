@@ -31,7 +31,7 @@ let actions = {
                         foundObject = currentArea.objects[i];
                         return foundObject; 
                     } else {
-						for(let j = 0; i < currentArea.objects[j].synonyms.length; j++) {
+						for(let j = 0; j < currentArea.objects[i].synonyms?.length; j++) {
 							if(currentArea.objects[i] && currentArea.objects[i].synonyms[j] == name) {
 								foundObject = currentArea.objects[i];
 								return foundObject;
